@@ -1,4 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_zia/Screen/page_empat.dart';
+
+import 'Screen/page_dua.dart';
+import 'Screen/page_satu.dart';
+import 'Screen/page_tiga.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Soviatul',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -36,7 +43,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 //ketik st
 class PageOne extends StatelessWidget {
   const PageOne({super.key});
@@ -47,14 +53,106 @@ class PageOne extends StatelessWidget {
       appBar: AppBar(
         //appBar : properti dari sebuah widget
         //AppBar : widget
-
-        title: Text('Aplikasi Pertama',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: Text('Aplikasi Pertama', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.pink,
       ),
       body: Center(
-        child: Text("Selamat Datang di Flutter App pertama MI 2B Soviatul Qhoziyah"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Selamat Datang di Flutter App pertama MI 2B Soviatul Qhoziyah",
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                onPressed: () {
+                  //ini untuk pindah ke page 1
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageSatu()),
+                  );
+                },
+                elevation: 18.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                color: Colors.pink,
+                child: Text(
+                  'Page 1',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                onPressed: () {
+                  //ini untuk pindah ke page 1
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageDua()),
+                  );
+                },
+                elevation: 18.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+
+                //ini untuk pindah page
+                // color: Colors.purple
+                color: Colors.pink,
+                child: Text(
+                  'Page 2',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                onPressed: () {
+                  //ini untuk pindah ke page 1
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageTiga()),
+                  );
+                },
+                elevation: 18.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                color: Colors.pink,
+                child: Text(
+                  'Page 3',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                onPressed: () {
+                  //ini untuk pindah ke page 1
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageEmpat()),
+                  );
+                },
+                elevation: 18.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                color: Colors.pink,
+                child: Text(
+                  'Page 4',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+              ),
+            ),
+          ],
+        ),
         //child :  cuma bisa nampung 1 widget
         //children : bisa nampung beberapa widget
       ),
